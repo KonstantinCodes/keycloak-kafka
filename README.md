@@ -1,10 +1,11 @@
 # keycloak-kafka
 Push Keycloak Events to Kafka
 
-# Build
+# Build & deploy
 ```bash
 mvn clean install
 mvn clean package
+cp ./ear/target/kafka-events-bundle-1.0-SNAPSHOT.ear /opt/jboss/keycloak/standalone/deployments/
 ```
 
 # Run kafka.cli to set up config parameters
