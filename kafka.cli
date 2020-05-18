@@ -1,0 +1,11 @@
+embed-server --server-config=standalone-ha.xml --std-out=echo
+/subsystem=keycloak-server/spi=eventsListener:add()
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:add(enabled=true)
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.topicEvents,value=keycloak)
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.clientId,value=keycloak)
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.bootstrapServers,value=${env.KAFKA_BROKERS})
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.username,value=${env.KAFKA_USER})
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.password,value=${env.KAFKA_PASSWORD})
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.events,value="REGISTER,UPDATE_EMAIL,UPDATE_PROFILE,VERIFY_EMAIL")
+/subsystem=keycloak-server/spi=eventsListener/provider=kafka:write-attribute(name=properties.topicAdminEvents,value=keycloak)
+stop-embedded-server
