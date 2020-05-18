@@ -6,18 +6,18 @@
 
     <parent>
         <groupId>codes.konstantin.keycloak</groupId>
-        <artifactId>registration-validation</artifactId>
+        <artifactId>kafka-events</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>registration-validation-bundle</artifactId>
+    <artifactId>kafka-events-bundle</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>ear</packaging>
 
     <dependencies>
         <dependency>
             <groupId>codes.konstantin.keycloak</groupId>
-            <artifactId>registration-validation-module</artifactId>
+            <artifactId>kafka-events-module</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

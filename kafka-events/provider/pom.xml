@@ -6,11 +6,11 @@
 
     <parent>
         <groupId>codes.konstantin.keycloak</groupId>
-        <artifactId>registration-validation</artifactId>
+        <artifactId>kafka-events</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>registration-validation-module</artifactId>
+    <artifactId>kafka-events-module</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
